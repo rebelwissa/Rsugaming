@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Downloads</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function handleDownload(downloadUrl) {
+      const taskWindow = window.open('https://smrturl.co/a/s83f9eabcdb/7288?s1=', '_blank');
+      
+      const checkTask = setInterval(() => {
+        try {
+          if (taskWindow.closed) {
+            clearInterval(checkTask);
+            setTimeout(() => {
+              window.location.href = downloadUrl;
+            }, 1000);
+          }
+        } catch (e) {
+          setTimeout(() => {
+            clearInterval(checkTask);
+            window.location.href = downloadUrl;
+          }, 10000);
+        }
+      }, 1000);
+
+      setTimeout(() => {
+        clearInterval(checkTask);
+        if (!taskWindow.closed) {
+          taskWindow.close();
+        }
+        window.location.href = downloadUrl;
+      }, 30000);
+    }
+  </script>
 </head>
 <body class="bg-green-100">
   <header class="bg-green-600 text-white py-6 text-center">
@@ -20,8 +49,8 @@
         <p class="text-sm text-gray-500">Latest: 3.2.1</p>
         <p class="text-sm text-gray-600">Downloads: 812,740</p>
         <div class="mt-2 space-x-2">
-          <button class="bg-green-600 text-white px-3 py-1 rounded">APK</button>
-          <button class="bg-yellow-500 text-white px-3 py-1 rounded">OBB</button>
+          <button onclick="handleDownload('https://getmodsapk.com/dl-track/gta-5-mobile-apk/41367')" class="bg-green-600 text-white px-3 py-1 rounded inline-block hover:bg-green-700 transition-colors cursor-pointer">APK</button>
+          <button onclick="handleDownload('https://getmodsapk.com/dl-track/gta-5-mobile-apk/41368')" class="bg-yellow-500 text-white px-3 py-1 rounded inline-block hover:bg-yellow-600 transition-colors cursor-pointer">OBB</button>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.7</div>
@@ -37,7 +66,7 @@
         <div class="mt-2 space-x-2">
           <button class="bg-blue-500 text-white px-3 py-1 rounded">iOS</button>
           <button class="bg-green-500 text-white px-3 py-1 rounded">Android</button>
-          <button class="bg-green-700 text-white px-3 py-1 rounded">Download APK</button>
+          <button onclick="handleDownload('https://dl.modfyp.mobi/uploads2/2025/1/FIFA_Mobile_aPK_24.0.01_Modfyp.com.apk')" class="bg-green-700 text-white px-3 py-1 rounded inline-block hover:bg-green-800 transition-colors cursor-pointer">Download APK</button>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.9</div>
@@ -51,7 +80,7 @@
         <p class="text-sm text-gray-500">Latest: 2.599.632</p>
         <p class="text-sm text-gray-600">Downloads: 920,153</p>
         <div class="mt-2 space-x-2">
-          <button class="bg-green-500 text-white px-3 py-1 rounded">Download Mod</button>
+          <button onclick="handleDownload('https://getmodsapk.com/dl-track/copy-free-roblox-mod-apk/80247')" class="bg-green-500 text-white px-3 py-1 rounded inline-block hover:bg-green-600 transition-colors cursor-pointer">Download Mod</button>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.8</div>
@@ -65,7 +94,7 @@
         <p class="text-sm text-gray-500">Latest: 1.0.40</p>
         <p class="text-sm text-gray-600">Downloads: 1,200,000+</p>
         <div class="mt-2 space-x-2">
-          <button class="bg-red-600 text-white px-3 py-1 rounded">Download APK</button>
+          <button onclick="handleDownload('https://getmodsapk.com/dl-track/call-of-duty-mobile-apk/67135')" class="bg-red-600 text-white px-3 py-1 rounded inline-block hover:bg-red-700 transition-colors cursor-pointer">Download APK</button>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.9</div>
@@ -79,7 +108,7 @@
         <p class="text-sm text-gray-500">Latest: 1.20.1</p>
         <p class="text-sm text-gray-600">Downloads: 800,000+</p>
         <div class="mt-2 space-x-2">
-          <button class="bg-green-700 text-white px-3 py-1 rounded">Download Mod APK</button>
+          <a href="https://getmodsapk.com/dl-track/minecraft-mod-free-apk/79911" target="_blank" class="bg-green-700 text-white px-3 py-1 rounded inline-block hover:bg-green-800 transition-colors">Download Mod APK</a>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.8</div>
@@ -93,12 +122,11 @@
         <p class="text-sm text-gray-500">Latest: 23.40</p>
         <p class="text-sm text-gray-600">Downloads: 950,000+</p>
         <div class="mt-2 space-x-2">
-          <button class="bg-purple-700 text-white px-3 py-1 rounded">Download Mod APK</button>
+          <a href="https://getmodsapk.com/dl-track/fortnite-battle-royale-free-mod-apk/73207" target="_blank" class="bg-purple-700 text-white px-3 py-1 rounded inline-block hover:bg-purple-800 transition-colors">Download Mod APK</a>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.7</div>
     </div>
-
   </main>
   
   <footer class="text-center text-gray-500 text-sm py-6">

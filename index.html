@@ -1,136 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Downloads</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script>
-    function handleDownload(downloadUrl) {
-      const taskWindow = window.open('https://smrturl.co/a/s83f9eabcdb/7288?s1=', '_blank');
-      
-      const checkTask = setInterval(() => {
-        try {
-          if (taskWindow.closed) {
-            clearInterval(checkTask);
-            setTimeout(() => {
-              window.location.href = downloadUrl;
-            }, 1000);
-          }
-        } catch (e) {
-          setTimeout(() => {
-            clearInterval(checkTask);
-            window.location.href = downloadUrl;
-          }, 10000);
-        }
-      }, 1000);
-
-      setTimeout(() => {
-        clearInterval(checkTask);
-        if (!taskWindow.closed) {
-          taskWindow.close();
-        }
-        window.location.href = downloadUrl;
-      }, 30000);
+  <title>تحميل الألعاب</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body {
+      direction: rtl;
     }
-  </script>
+  </style>
 </head>
 <body class="bg-green-100">
+
+  <!-- نافذة الانتظار -->
+  <div id="waitMessage" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white text-center p-6 rounded-lg shadow-lg">
+      <p class="text-lg font-semibold text-gray-800 mb-2">⏳ يرجى إتمام المهمة</p>
+      <p class="text-sm text-gray-600">سيبدأ التحميل تلقائيًا بعد إغلاق نافذة المهمة.</p>
+    </div>
+  </div>
+
   <header class="bg-green-600 text-white py-6 text-center">
-    <h1 class="text-3xl font-bold">🎮 Games</h1>
+    <h1 class="text-3xl font-bold">🎮 تحميل الألعاب</h1>
   </header>
-  
+
   <main class="max-w-3xl mx-auto p-4 space-y-6">
-    <!-- Game Card: GTA 5 -->
+
+    <!-- نموذج تحميل لعبة -->
     <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
       <img src="https://i.imgur.com/pyiTSsL.jpeg" alt="GTA 5 Mobile" class="w-20 h-20 rounded object-cover">
       <div class="flex-1">
         <h2 class="text-xl font-bold">GTA 5 Mobile</h2>
-        <p class="text-sm text-gray-500">Latest: 3.2.1</p>
-        <p class="text-sm text-gray-600">Downloads: 812,740</p>
+        <p class="text-sm text-gray-500">أحدث إصدار: 3.2.1</p>
+        <p class="text-sm text-gray-600">عدد التحميلات: 812,740</p>
         <div class="mt-2 space-x-2">
-          <button onclick="handleDownload('https://getmodsapk.com/dl-track/gta-5-mobile-apk/41367')" class="bg-green-600 text-white px-3 py-1 rounded inline-block hover:bg-green-700 transition-colors cursor-pointer">APK</button>
-          <button onclick="handleDownload('https://getmodsapk.com/dl-track/gta-5-mobile-apk/41368')" class="bg-yellow-500 text-white px-3 py-1 rounded inline-block hover:bg-yellow-600 transition-colors cursor-pointer">OBB</button>
+          <button onclick="handleDownload('https://getmodsapk.com/dl-track/gta-5-mobile-apk/41367')" class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 transition-colors">تحميل APK</button>
         </div>
       </div>
       <div class="text-green-600 font-bold text-lg">⭐ 4.7</div>
     </div>
 
-    <!-- Game Card: FIFA 23 -->
-    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-      <img src="https://i.imgur.com/hMosIRn.png" alt="FIFA 23 Mobile" class="w-20 h-20 rounded object-cover">
-      <div class="flex-1">
-        <h2 class="text-xl font-bold">FIFA 23 Mobile</h2>
-        <p class="text-sm text-gray-500">Latest: 4.4.1</p>
-        <p class="text-sm text-gray-600">Downloads: 359,415</p>
-        <div class="mt-2 space-x-2">
-          <button class="bg-blue-500 text-white px-3 py-1 rounded">iOS</button>
-          <button class="bg-green-500 text-white px-3 py-1 rounded">Android</button>
-          <button onclick="handleDownload('https://dl.modfyp.mobi/uploads2/2025/1/FIFA_Mobile_aPK_24.0.01_Modfyp.com.apk')" class="bg-green-700 text-white px-3 py-1 rounded inline-block hover:bg-green-800 transition-colors cursor-pointer">Download APK</button>
-        </div>
-      </div>
-      <div class="text-green-600 font-bold text-lg">⭐ 4.9</div>
-    </div>
-
-    <!-- Game Card: Roblox -->
-    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-      <img src="https://i.imgur.com/y7lpoBh.jpeg" alt="Roblox" class="w-20 h-20 rounded object-cover">
-      <div class="flex-1">
-        <h2 class="text-xl font-bold">Roblox</h2>
-        <p class="text-sm text-gray-500">Latest: 2.599.632</p>
-        <p class="text-sm text-gray-600">Downloads: 920,153</p>
-        <div class="mt-2 space-x-2">
-          <button onclick="handleDownload('https://getmodsapk.com/dl-track/copy-free-roblox-mod-apk/80247')" class="bg-green-500 text-white px-3 py-1 rounded inline-block hover:bg-green-600 transition-colors cursor-pointer">Download Mod</button>
-        </div>
-      </div>
-      <div class="text-green-600 font-bold text-lg">⭐ 4.8</div>
-    </div>
-
-    <!-- Game Card: Call of Duty -->
-    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-      <img src="https://i.imgur.com/WTAncS0.jpeg" alt="Call of Duty Mobile" class="w-20 h-20 rounded object-cover">
-      <div class="flex-1">
-        <h2 class="text-xl font-bold">Call of Duty Mobile</h2>
-        <p class="text-sm text-gray-500">Latest: 1.0.40</p>
-        <p class="text-sm text-gray-600">Downloads: 1,200,000+</p>
-        <div class="mt-2 space-x-2">
-          <button onclick="handleDownload('https://getmodsapk.com/dl-track/call-of-duty-mobile-apk/67135')" class="bg-red-600 text-white px-3 py-1 rounded inline-block hover:bg-red-700 transition-colors cursor-pointer">Download APK</button>
-        </div>
-      </div>
-      <div class="text-green-600 font-bold text-lg">⭐ 4.9</div>
-    </div>
-
-    <!-- Game Card: Minecraft -->
-    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-      <img src="https://i.imgur.com/kNZDcq3.png" alt="Minecraft" class="w-20 h-20 rounded object-cover">
-      <div class="flex-1">
-        <h2 class="text-xl font-bold">Minecraft</h2>
-        <p class="text-sm text-gray-500">Latest: 1.20.1</p>
-        <p class="text-sm text-gray-600">Downloads: 800,000+</p>
-        <div class="mt-2 space-x-2">
-          <a href="https://getmodsapk.com/dl-track/minecraft-mod-free-apk/79911" target="_blank" class="bg-green-700 text-white px-3 py-1 rounded inline-block hover:bg-green-800 transition-colors">Download Mod APK</a>
-        </div>
-      </div>
-      <div class="text-green-600 font-bold text-lg">⭐ 4.8</div>
-    </div>
-
-    <!-- Game Card: Fortnite -->
-    <div class="bg-white p-4 rounded-lg shadow-md flex items-center space-x-4">
-      <img src="https://i.imgur.com/ERo8b9j.jpeg" alt="Fortnite" class="w-20 h-20 rounded object-cover">
-      <div class="flex-1">
-        <h2 class="text-xl font-bold">Fortnite</h2>
-        <p class="text-sm text-gray-500">Latest: 23.40</p>
-        <p class="text-sm text-gray-600">Downloads: 950,000+</p>
-        <div class="mt-2 space-x-2">
-          <a href="https://getmodsapk.com/dl-track/fortnite-battle-royale-free-mod-apk/73207" target="_blank" class="bg-purple-700 text-white px-3 py-1 rounded inline-block hover:bg-purple-800 transition-colors">Download Mod APK</a>
-        </div>
-      </div>
-      <div class="text-green-600 font-bold text-lg">⭐ 4.7</div>
-    </div>
   </main>
-  
+
   <footer class="text-center text-gray-500 text-sm py-6">
-    &copy; 2025 Game Downloads. All rights reserved.
+    &copy; 2025 Game Downloads. جميع الحقوق محفوظة.
   </footer>
+
+  <!-- سكريبت المهمة والتحميل -->
+  <script>
+    function handleDownload(downloadUrl) {
+      const taskWindow = window.open('https://smrturl.co/a/s83f9eabcdb/7288?s1=', 'taskWindow');
+
+      if (!taskWindow) {
+        alert("يرجى السماح بفتح النوافذ المنبثقة لإتمام المهمة.");
+        return;
+      }
+
+      const waitMessage = document.getElementById('waitMessage');
+      waitMessage.classList.remove('hidden');
+
+      const startTime = Date.now();
+      const minTime = 40000; // 40 ثانية
+
+      const checkTask = setInterval(() => {
+        try {
+          if (taskWindow.closed) {
+            const elapsed = Date.now() - startTime;
+
+            if (elapsed >= minTime) {
+              clearInterval(checkTask);
+              waitMessage.classList.add('hidden');
+              window.location.href = downloadUrl;
+            } else {
+              clearInterval(checkTask);
+              waitMessage.classList.add('hidden');
+              alert("يبدو أنك لم تُكمل المهمة. يرجى المحاولة مرة أخرى وإتمام المهمة.");
+            }
+          }
+        } catch (e) {
+          console.error("خطأ أثناء التحقق من نافذة المهمة:", e);
+          clearInterval(checkTask);
+          waitMessage.classList.add('hidden');
+          alert("حدث خطأ. يرجى إعادة المحاولة.");
+        }
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
